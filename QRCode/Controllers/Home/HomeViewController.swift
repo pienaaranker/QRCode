@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ContactsUI
 
 class HomeViewController: UIViewController, HomeViewable {
 
@@ -16,5 +17,25 @@ class HomeViewController: UIViewController, HomeViewable {
         viewModel = HomeViewModel(viewable: self)
     }
     
+    // MARK: - Viewable
+    
+    func showContactsPicker() {
+        let contactsPicker = CNContactPickerViewController()
+        contactsPicker.delegate = self
+        self.present(contactsPicker, animated: true, completion: nil)
+    }
+    
+    // MARK: - Actions
+    @IBAction func shareContact(_ sender: Any) {
+        viewModel.shareContact()
+    }
+    
+    @IBAction func importContact(_ sender: Any) {
+    }
+}
 
+extension HomeViewController: CNContactPickerDelegate {
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        print(contact)
+    }
 }

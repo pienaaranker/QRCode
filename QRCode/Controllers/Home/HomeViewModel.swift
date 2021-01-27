@@ -14,4 +14,8 @@ class HomeViewModel {
     init(viewable: HomeViewable) {
         self.viewable = viewable
     }
+    
+    func shareContact() {
+        viewable?.showContactsPicker()
+    }
 }

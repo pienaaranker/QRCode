@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="87t-8i-5Tb">
             <objects>
-                <viewController id="sR7-Dl-yfu" sceneMemberID="viewController">
+                <viewController id="sR7-Dl-yfu" customClass="HomeViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3eD-vW-OAQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,11 +27,17 @@
                                 <rect key="frame" x="118" y="292" width="158" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share contact"/>
+                                <connections>
+                                    <action selector="shareContact:" destination="sR7-Dl-yfu" eventType="touchUpInside" id="dW0-kn-WNY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r3-ui-sf7">
                                 <rect key="frame" x="102" y="399" width="203" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Import contact from QR Code"/>
+                                <connections>
+                                    <action selector="importContact:" destination="sR7-Dl-yfu" eventType="touchUpInside" id="Iwz-i3-tfL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hbh-Bo-vKr"/>
