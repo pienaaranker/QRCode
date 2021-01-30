@@ -27,6 +27,7 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
         configureLabels()
         configureImageView()
         configureTableView()
+        viewModel.generateQRCode()
     }
     
     func configureLabels() {
@@ -42,7 +43,11 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
     func configureTableView() {
         
     }
-
+    
+    @IBAction func share(_ sender: Any) {
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,7 +59,13 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ContactInfoTableViewCell.self)) as? ContactInfoTableViewCell else {
+            return UITableViewCell()
+        }
+        let data = viewModel.getPhoneNumberInfo(for: indexPath.row)
+        cell.set(key: data.key, value: data.value)
+        
+        return cell
     }
 
 }

@@ -129,7 +129,13 @@
                             <outlet property="delegate" destination="hrC-72-B7j" id="kWt-k5-psd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kOn-L8-3ix"/>
+                    <navigationItem key="navigationItem" id="kOn-L8-3ix">
+                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.up" catalog="system" id="X0e-q8-NJN">
+                            <connections>
+                                <action selector="share:" destination="hrC-72-B7j" id="xBL-5D-Z1v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="contactImageView" destination="iwx-dl-eW6" id="9hs-nM-BCC"/>
                         <outlet property="nameLabel" destination="XHv-vJ-5sp" id="OUu-7S-HcE"/>
@@ -159,6 +165,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
