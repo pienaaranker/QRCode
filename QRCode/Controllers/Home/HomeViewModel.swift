@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import Contacts
 
 class HomeViewModel {
+    
+    struct Strings {
+        static let homeToDetailSegue = "showContactDetail"
+    }
     
     weak var viewable: HomeViewable?
     
@@ -17,5 +22,9 @@ class HomeViewModel {
     
     func shareContact() {
         viewable?.showContactsPicker()
+    }
+    
+    func selectedContactToShare(contact: CNContact) {
+        viewable?.navigateToContactDetails(with: contact)
     }
 }

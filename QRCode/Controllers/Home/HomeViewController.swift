@@ -25,6 +25,10 @@ class HomeViewController: UIViewController, HomeViewable {
         self.present(contactsPicker, animated: true, completion: nil)
     }
     
+    func navigateToContactDetails(with contact: CNContact) {
+        self.performSegue(withIdentifier: HomeViewModel.Strings.homeToDetailSegue, sender: contact)
+    }
+    
     // MARK: - Actions
     @IBAction func shareContact(_ sender: Any) {
         viewModel.shareContact()
@@ -32,10 +36,21 @@ class HomeViewController: UIViewController, HomeViewable {
     
     @IBAction func importContact(_ sender: Any) {
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? ContactDetailTableViewController,
+              let contact = sender as? CNContact else {
+            return
+        }
+        detailVC.contact = contact
+        
+    }
 }
 
 extension HomeViewController: CNContactPickerDelegate {
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-        print(contact)
+        viewModel.selectedContactToShare(contact: contact)
     }
 }
