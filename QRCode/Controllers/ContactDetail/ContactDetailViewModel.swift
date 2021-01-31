@@ -75,10 +75,11 @@ class ContactDetailViewModel: QRCodeManagerDelegate {
     
     // MARK: - QRCode generation
     func generateQRCode() {
-        guard let data = try? CNContactVCardSerialization.data(with: [contact]) else {
+        guard let data = try? CNContactVCardSerialization.data(with: [contact]),
+              let str = String(data: data, encoding: .utf8) else {
             return
         }
-        qrCodeManager?.fetchQRCode(for: data.base64EncodedString())
+        qrCodeManager?.fetchQRCode(for: str)
     }
     
     // MARK: - QRCodeManager Delegate

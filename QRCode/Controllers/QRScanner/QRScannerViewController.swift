@@ -51,7 +51,7 @@ class QRScannerViewController: UIViewController, QRScannerViewable, QRScannerVie
     
     func qrScanningSucceededWithCode(string: String?) {
         qrScannerView.stopScanning()
-        viewModel.importContact(vcfBase64String: string)
+        viewModel.importContact(vcfString: string)
     }
     
     func qrScanningDidStop() {

@@ -22,9 +22,9 @@ class QRScannerViewModel {
         static let infoLabel = "↓ Drag down to close ↓"
     }
     
-    func importContact(vcfBase64String: String?) {
-        guard let vcfBase64String = vcfBase64String,
-              let data = Data(base64Encoded: vcfBase64String),
+    func importContact(vcfString: String?) {
+        guard let vcfString = vcfString,
+              let data = vcfString.data(using: .utf8),
               let contact = try? CNContactVCardSerialization.contacts(with: data).first  else {
             return
         }

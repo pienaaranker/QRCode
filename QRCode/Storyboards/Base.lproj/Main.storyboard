@@ -190,7 +190,7 @@
         <!--Navigation Controller-->
         <scene sceneID="CEU-L7-0q0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="obd-jF-NbW" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="light" id="obd-jF-NbW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5sf-HI-un5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -255,7 +255,7 @@
             <point key="canvasLocation" x="1338" y="232"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.082352941176470587" green="0.43529411764705883" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">

@@ -19,7 +19,7 @@ class ContactImageView: UIImageView {
         super.awakeFromNib()
         
         clipsToBounds = true
-        contentMode = .scaleToFill
+        contentMode = .scaleAspectFill
     }
     
     func addStyling() {
