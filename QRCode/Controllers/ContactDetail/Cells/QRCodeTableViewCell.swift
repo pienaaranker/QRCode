@@ -14,6 +14,8 @@ class QRCodeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.backgroundColor = Theme.TableViews.backgroundColor
+        qrCodeImageView.layer.cornerRadius = 16
     }
 
     func set(image: UIImage?) {

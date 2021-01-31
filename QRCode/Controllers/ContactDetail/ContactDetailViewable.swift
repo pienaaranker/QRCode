@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ContactDetailViewable: class {
     func showError(message: String)
     func changeStateOfShareButton(enabled: Bool)
+    func hideContactImageView()
     func reloadTableView()
 }

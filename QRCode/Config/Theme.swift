@@ -23,6 +23,10 @@ class Theme {
         static let secondaryGradient = UIColor(red: 20/255, green: 64/255, blue: 66/255, alpha: 1.0)
     }
     
+    struct TableViews {
+        static let backgroundColor = Theme.Views.secondaryGradient
+    }
+    
     struct Buttons {
         static let backgroundColor = UIColor.white
         static let titleColor = UIColor.black

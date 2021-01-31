@@ -9,21 +9,17 @@ import UIKit
 
 class ContactInfoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var keyLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        keyLabel.font = Theme.Labels.standardFont
-        keyLabel.textColor = Theme.Labels.textColor
-        
+                
+        self.backgroundColor = Theme.TableViews.backgroundColor
         valueLabel.font = Theme.Labels.standardFont
-        valueLabel.textColor = Theme.Labels.textColor
+        valueLabel.textColor = Theme.Labels.textColorLight
     }
     
-    func set(key: String, value: String) {
-        keyLabel.text = key
+    func set(value: String) {
         valueLabel.text = value
     }
 }

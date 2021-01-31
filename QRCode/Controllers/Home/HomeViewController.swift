@@ -22,9 +22,13 @@ class HomeViewController: UIViewController, HomeViewable {
         configureButtons()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     func configureView() {
         view.setGradient(startColor: Theme.Views.secondaryColor, endColor: Theme.Views.secondaryGradient)
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func configureLabels() {

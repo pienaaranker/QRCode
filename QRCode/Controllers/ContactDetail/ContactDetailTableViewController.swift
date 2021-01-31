@@ -11,6 +11,7 @@ import Contacts
 class ContactDetailTableViewController: UITableViewController, ContactDetailViewable {
 
     @IBOutlet weak var contactImageView: ContactImageView!
+    @IBOutlet weak var contactImageViewVerticalAlignmentContstraint: NSLayoutConstraint!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
@@ -28,11 +29,11 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
         configureLabels()
         configureImageView()
         configureTableView()
-        configureView()
         viewModel.generateQRCode()
     }
     
-    func configureView() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
@@ -43,18 +44,20 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
     func configureLabels() {
         nameLabel.text = viewModel.getContactDisplayName()
         nameLabel.font = Theme.Labels.LargeFont
-        nameLabel.textColor = Theme.Labels.textColor
+        nameLabel.textColor = Theme.Labels.textColorLight
     }
     
     func configureImageView() {
         contactImageView.image = viewModel.getContactImage()
     }
     
-    func configureTableView() {        
-            tableView.rowHeight = UITableView.automaticDimension
-            tableView.estimatedRowHeight = 60
-            tableView.tableFooterView = UIView()
-            tableView.sectionFooterHeight = 0.5
+    func configureTableView() {
+        tableView.tableHeaderView?.backgroundColor = Theme.TableViews.backgroundColor
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
+        tableView.tableFooterView = UIView()
+        tableView.sectionFooterHeight = 0.5
+        tableView.backgroundColor = Theme.TableViews.backgroundColor
     }
     
     //MARK: - Viewable
@@ -70,6 +73,12 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
     func reloadTableView() {
         tableView.reloadData()
     }
+    
+    func hideContactImageView() {
+        contactImageView.removeFromSuperview()
+        tableView.tableHeaderView?.frame.size.height -= 128
+    }
+    
     
     // MARK: - Actions
     @IBAction func share(_ sender: Any) {
@@ -105,8 +114,8 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ContactInfoTableViewCell.self)) as? ContactInfoTableViewCell else {
             return UITableViewCell()
         }
-        let data = viewModel.getPhoneNumberInfo(for: indexPath.row)
-        cell.set(key: data.key, value: data.value)
+        let value = viewModel.getPhoneNumberInfo(for: indexPath.row)
+        cell.set(value: value)
         
         return cell
     }

@@ -41,6 +41,7 @@ class ContactDetailViewModel: QRCodeManagerDelegate {
     
     func getContactImage() -> UIImage? {
         guard let imageData = contact.imageData else {
+            viewable?.hideContactImageView()
             return nil
         }
         
@@ -63,10 +64,9 @@ class ContactDetailViewModel: QRCodeManagerDelegate {
         }
     }
     
-    func getPhoneNumberInfo(for index: Int) -> (key: String, value: String)  {
+    func getPhoneNumberInfo(for index: Int) -> String  {
         let data = contact.phoneNumbers[index]
-        let key = CNLabeledValue<NSString>.localizedString(forLabel: data.label!)
-        return (String(key), data.value.stringValue)
+        return data.value.stringValue
     }
     
     // MARK: - QRCode generation
