@@ -11,6 +11,10 @@ import Contacts
 
 class ContactDetailViewModel: QRCodeManagerDelegate {
     
+    struct Strings {
+        static let title = "Contact Details"
+    }
+    
     weak var viewable: ContactDetailViewable?
     private var contact: CNContact
     var qrCodeManager: QRCodeManager?

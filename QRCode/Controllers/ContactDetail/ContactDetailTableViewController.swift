@@ -26,6 +26,7 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
         
         viewModel = ContactDetailViewModel(viewable: self, contact: contact)
         
+        configureView()
         configureLabels()
         configureImageView()
         configureTableView()
@@ -35,6 +36,10 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func configureView() {
+        self.title = ContactDetailViewModel.Strings.title
     }
     
     func configureButtons() {
@@ -58,6 +63,7 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
         tableView.tableFooterView = UIView()
         tableView.sectionFooterHeight = 0.5
         tableView.backgroundColor = Theme.TableViews.backgroundColor
+        tableView.separatorStyle = .none
     }
     
     //MARK: - Viewable
