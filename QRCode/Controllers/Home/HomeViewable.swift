@@ -9,7 +9,7 @@ import Foundation
 import Contacts
 
 protocol HomeViewable: class {
-    
     func showContactsPicker()
     func navigateToContactDetails(with contact: CNContact)
+    func openCamera()
 }

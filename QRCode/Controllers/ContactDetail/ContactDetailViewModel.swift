@@ -14,6 +14,7 @@ class ContactDetailViewModel: QRCodeManagerDelegate {
     weak var viewable: ContactDetailViewable?
     private var contact: CNContact
     var qrCodeManager: QRCodeManager?
+    var qrCode: UIImage?
     
     init(viewable: ContactDetailViewable, contact: CNContact) {
         self.viewable = viewable
@@ -73,6 +74,16 @@ class ContactDetailViewModel: QRCodeManagerDelegate {
             return
         }
         qrCodeManager?.fetchQRCode(for: data.base64EncodedString())
+    }
+    
+    func fetchQRCodeSucceeded(with imageData: Data) {
+        qrCode = UIImage(data: imageData)
+        viewable?.changeStateOfShareButton(enabled: true)
+        viewable?.reloadTableView()
+    }
+    
+    func fetchQRCodeFailed(with error: QRError) {
+        viewable?.showError(message: error.description)
     }
     
 }

@@ -9,28 +9,30 @@ import Foundation
 
 class NetworkManager: NetworkManagable {
     
-    func performGetRequest(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+    func performGetRequest(url: URL, completion: @escaping (Data?, QRError?) -> Void) {
         print("Performing request: \(url)")
         logRequest(url: url)
 
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             self.logResponse(data: data, response: response as? HTTPURLResponse, error: error)
-            self.handleAPIResponse(data: data, response: response as? HTTPURLResponse, error: error, completion: completion)
+            DispatchQueue.main.async {
+                self.handleAPIResponse(data: data, response: response as? HTTPURLResponse, error: error, completion: completion)
+            }
         })
 
         task.resume()
     }
         
-    func handleAPIResponse(data: Data?, response: HTTPURLResponse?, error: Error?, completion: (Data?, Error?) -> Void) {
-        switch response!.statusCode {
+    func handleAPIResponse(data: Data?, response: HTTPURLResponse?, error: Error?, completion: (Data?, QRError?) -> Void) {
+        switch response?.statusCode ?? 0 {
         case 200...299:
             completion(data, nil)
         case 400...499:
-            completion(nil, error)
+            completion(nil, QRError.contactTooLarge)
         case 500:
-            completion(nil, error)
+            completion(nil, QRError.callFailed)
         default:
-            completion(nil, error)
+            completion(nil, QRError.connectionIssue)
         }
     }
     

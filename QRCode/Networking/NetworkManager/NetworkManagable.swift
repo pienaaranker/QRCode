@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkManagable {
-    func performGetRequest(url: URL, completion: @escaping (Data?, Error?) -> Void)
+    func performGetRequest(url: URL, completion: @escaping (Data?, QRError?) -> Void)
 }

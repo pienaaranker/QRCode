@@ -1,6 +1,6 @@
 //
 //  APIRequest.swift
-//  WeatherApp
+//  QRCode
 //
 //  Created by Pienaar Anker on 2020/12/21.
 //

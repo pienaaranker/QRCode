@@ -9,5 +9,5 @@ import Foundation
 
 protocol QRCodeManagerDelegate: class {
     func fetchQRCodeSucceeded(with imageData: Data)
-    func fetchQRCodeFailed(with error: Error)
+    func fetchQRCodeFailed(with error: QRError)
 }

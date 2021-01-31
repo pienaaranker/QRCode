@@ -13,5 +13,6 @@ class Theme {
         static let standardFont = UIFont(name: "Verdana", size: 17)
         static let LargeFont = UIFont(name: "Verdana", size: 28)
         static let textColor = UIColor.black
+        static let textColorLight = UIColor.white
     }
 }

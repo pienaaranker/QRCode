@@ -18,7 +18,6 @@ class HomeViewController: UIViewController, HomeViewable {
     }
     
     // MARK: - Viewable
-    
     func showContactsPicker() {
         let contactsPicker = CNContactPickerViewController()
         contactsPicker.delegate = self
@@ -29,12 +28,17 @@ class HomeViewController: UIViewController, HomeViewable {
         self.performSegue(withIdentifier: HomeViewModel.Strings.homeToDetailSegue, sender: contact)
     }
     
+    func openCamera() {
+        self.performSegue(withIdentifier: HomeViewModel.Strings.homeToQRScanner, sender: nil)
+    }
+    
     // MARK: - Actions
     @IBAction func shareContact(_ sender: Any) {
         viewModel.shareContact()
     }
     
     @IBAction func importContact(_ sender: Any) {
+        viewModel.openCamera()
     }
     
     // MARK: - Navigation
@@ -52,5 +56,16 @@ class HomeViewController: UIViewController, HomeViewable {
 extension HomeViewController: CNContactPickerDelegate {
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         viewModel.selectedContactToShare(contact: contact)
+    }
+}
+
+extension HomeViewController: QRScannerDelegate {
+    func qrScanningDidFail() {
+    }
+    
+    func qrScanningSucceeded(with contact: CNContact) {
+    }
+    
+    func qrScanningDidStop() {
     }
 }

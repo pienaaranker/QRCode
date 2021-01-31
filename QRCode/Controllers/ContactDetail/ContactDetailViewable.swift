@@ -8,5 +8,7 @@
 import Foundation
 
 protocol ContactDetailViewable: class {
+    func showError(message: String)
+    func changeStateOfShareButton(enabled: Bool)
     func reloadTableView()
 }

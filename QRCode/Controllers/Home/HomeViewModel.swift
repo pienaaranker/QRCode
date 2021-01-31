@@ -12,6 +12,7 @@ class HomeViewModel {
     
     struct Strings {
         static let homeToDetailSegue = "showContactDetail"
+        static let homeToQRScanner = "showQRScanner"
     }
     
     weak var viewable: HomeViewable?
@@ -26,5 +27,9 @@ class HomeViewModel {
     
     func selectedContactToShare(contact: CNContact) {
         viewable?.navigateToContactDetails(with: contact)
+    }
+    
+    func openCamera() {
+        viewable?.openCamera()
     }
 }

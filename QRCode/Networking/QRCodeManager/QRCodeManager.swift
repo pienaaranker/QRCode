@@ -26,7 +26,7 @@ class QRCodeManager {
     
     func fetchQRCode(for dataString: String) {
         let request = QRCodeRequest(cht: "qr",
-                                    chs: "200x200",
+                                    chs: "300x300",
                                     chl: dataString,
                                     choe: "UTF-8")
         
@@ -35,13 +35,13 @@ class QRCodeManager {
             fatalError("Could not parse weather api to url")
         }
         
-        networkManager.performGetRequest(url: url) { (data, error) in
+        networkManager.performGetRequest(url: url) { (data, error) in            
             if let error = error {
                 self.delegate?.fetchQRCodeFailed(with: error)
             } else if let data = data {
                 self.delegate?.fetchQRCodeSucceeded(with: data)
             } else {
-                self.delegate?.fetchQRCodeFailed(with: <#T##Error#>)
+                self.delegate?.fetchQRCodeFailed(with: QRError.connectionIssue)
             }
         }
     }
