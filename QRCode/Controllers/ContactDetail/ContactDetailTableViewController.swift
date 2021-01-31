@@ -28,7 +28,12 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
         configureLabels()
         configureImageView()
         configureTableView()
+        configureView()
         viewModel.generateQRCode()
+    }
+    
+    func configureView() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func configureButtons() {

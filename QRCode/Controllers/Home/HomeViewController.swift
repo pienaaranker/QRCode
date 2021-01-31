@@ -9,7 +9,8 @@ import UIKit
 import ContactsUI
 
 class HomeViewController: UIViewController, HomeViewable {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     var viewModel: HomeViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +18,19 @@ class HomeViewController: UIViewController, HomeViewable {
         viewModel = HomeViewModel(viewable: self)
         
         configureView()
+        configureLabels()
+        configureButtons()
     }
     
     func configureView() {
-        view.setGradient(startColor: Theme.Views.primaryColor, endColor: Theme.Views.primaryGradient)
+        view.setGradient(startColor: Theme.Views.secondaryColor, endColor: Theme.Views.secondaryGradient)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func configureLabels() {
-        
+        titleLabel.text = HomeViewModel.Strings.title
+        titleLabel.font = Theme.Labels.LargeFont
+        titleLabel.textColor = Theme.Labels.textColorLight
     }
     
     func configureButtons() {

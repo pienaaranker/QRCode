@@ -16,38 +16,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-GJ-3IW">
-                                <rect key="frame" x="118" y="292" width="158" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlM-1O-3eh">
+                                <rect key="frame" x="24" y="112" width="366" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-GJ-3IW" customClass="QRButton" customModule="QRCode" customModuleProvider="target">
+                                <rect key="frame" x="57" y="418" width="300" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="R53-aq-1CY"/>
+                                    <constraint firstAttribute="width" constant="300" id="YWx-sa-8rI"/>
+                                </constraints>
                                 <state key="normal" title="Share contact"/>
                                 <connections>
                                     <action selector="shareContact:" destination="sR7-Dl-yfu" eventType="touchUpInside" id="dW0-kn-WNY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r3-ui-sf7">
-                                <rect key="frame" x="102" y="399" width="203" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r3-ui-sf7" customClass="QRButton" customModule="QRCode" customModuleProvider="target">
+                                <rect key="frame" x="57" y="517" width="300" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Tgi-6I-V9j"/>
+                                    <constraint firstAttribute="width" constant="300" id="YuC-nt-oUO"/>
+                                </constraints>
                                 <state key="normal" title="Import contact from QR Code"/>
                                 <connections>
                                     <action selector="importContact:" destination="sR7-Dl-yfu" eventType="touchUpInside" id="Iwz-i3-tfL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlM-1O-3eh">
-                                <rect key="frame" x="174" y="112" width="66" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hbh-Bo-vKr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="0r3-ui-sf7" firstAttribute="top" secondItem="g6P-GJ-3IW" secondAttribute="bottom" constant="39" id="FYH-Pl-A1F"/>
                             <constraint firstItem="nlM-1O-3eh" firstAttribute="centerX" secondItem="3eD-vW-OAQ" secondAttribute="centerX" id="IIm-fS-p0H"/>
                             <constraint firstItem="nlM-1O-3eh" firstAttribute="top" secondItem="hbh-Bo-vKr" secondAttribute="top" constant="24" id="Kyh-QA-ATS"/>
+                            <constraint firstItem="hbh-Bo-vKr" firstAttribute="trailing" secondItem="nlM-1O-3eh" secondAttribute="trailing" constant="24" id="XYN-t7-XqS"/>
+                            <constraint firstItem="g6P-GJ-3IW" firstAttribute="centerX" secondItem="3eD-vW-OAQ" secondAttribute="centerX" id="Yjr-wC-RAl"/>
+                            <constraint firstItem="0r3-ui-sf7" firstAttribute="centerX" secondItem="g6P-GJ-3IW" secondAttribute="centerX" id="fao-GI-TDM"/>
+                            <constraint firstItem="nlM-1O-3eh" firstAttribute="leading" secondItem="hbh-Bo-vKr" secondAttribute="leading" constant="24" id="mNw-iZ-Ahl"/>
+                            <constraint firstItem="g6P-GJ-3IW" firstAttribute="centerY" secondItem="3eD-vW-OAQ" secondAttribute="centerY" id="upr-gf-gMk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ROb-ez-p5h"/>
                     <connections>
+                        <outlet property="titleLabel" destination="nlM-1O-3eh" id="45w-Fg-hA1"/>
                         <segue destination="hrC-72-B7j" kind="show" identifier="showContactDetail" id="cyd-kt-rWX"/>
                         <segue destination="2vV-Zo-zXR" kind="presentation" identifier="showQRScanner" id="524-w6-8gg"/>
                     </connections>
