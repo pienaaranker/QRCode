@@ -15,6 +15,21 @@ class HomeViewController: UIViewController, HomeViewable {
         super.viewDidLoad()
 
         viewModel = HomeViewModel(viewable: self)
+        
+        configureView()
+    }
+    
+    func configureView() {
+        view.setGradient(startColor: Theme.Views.primaryColor, endColor: Theme.Views.primaryGradient)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    func configureLabels() {
+        
+    }
+    
+    func configureButtons() {
+        
     }
     
     // MARK: - Viewable
@@ -32,6 +47,13 @@ class HomeViewController: UIViewController, HomeViewable {
         self.performSegue(withIdentifier: HomeViewModel.Strings.homeToQRScanner, sender: nil)
     }
     
+    func showContactDetails(contact: CNContact) {
+        let contactDetailsVC = CNContactViewController(forNewContact: contact)
+        contactDetailsVC.delegate = self
+        let navigationController = UINavigationController(rootViewController: contactDetailsVC)
+        self.present(navigationController, animated: true, completion: nil)
+    }
+    
     // MARK: - Actions
     @IBAction func shareContact(_ sender: Any) {
         viewModel.shareContact()
@@ -44,11 +66,25 @@ class HomeViewController: UIViewController, HomeViewable {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let detailVC = segue.destination as? ContactDetailTableViewController,
-              let contact = sender as? CNContact else {
-            return
+        
+        switch segue.identifier {
+        case HomeViewModel.Strings.homeToDetailSegue:
+            guard let detailVC = segue.destination as? ContactDetailTableViewController,
+                  let contact = sender as? CNContact else {
+                return
+            }
+            detailVC.contact = contact
+            
+        case HomeViewModel.Strings.homeToQRScanner:
+            guard let scannerVC = segue.destination as? QRScannerViewController else {
+                return
+            }
+            scannerVC.delegate = self
+            
+        default:
+            break
         }
-        detailVC.contact = contact
+        
         
     }
 }
@@ -64,8 +100,16 @@ extension HomeViewController: QRScannerDelegate {
     }
     
     func qrScanningSucceeded(with contact: CNContact) {
+        viewModel.showContactDetails(contact: contact)
     }
     
     func qrScanningDidStop() {
+    }
+}
+
+extension HomeViewController: CNContactViewControllerDelegate {
+    
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        viewController.navigationController?.dismiss(animated: true, completion: nil)
     }
 }

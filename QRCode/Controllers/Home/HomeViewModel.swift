@@ -13,6 +13,7 @@ class HomeViewModel {
     struct Strings {
         static let homeToDetailSegue = "showContactDetail"
         static let homeToQRScanner = "showQRScanner"
+        static let title = "Contact QR Code Generator"
     }
     
     weak var viewable: HomeViewable?
@@ -31,5 +32,9 @@ class HomeViewModel {
     
     func openCamera() {
         viewable?.openCamera()
+    }
+    
+    func showContactDetails(contact: CNContact) {
+        viewable?.showContactDetails(contact: contact)
     }
 }

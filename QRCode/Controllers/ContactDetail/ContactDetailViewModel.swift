@@ -15,6 +15,7 @@ class ContactDetailViewModel: QRCodeManagerDelegate {
     private var contact: CNContact
     var qrCodeManager: QRCodeManager?
     var qrCode: UIImage?
+    var qrCodeURL: URL?
     
     init(viewable: ContactDetailViewable, contact: CNContact) {
         self.viewable = viewable
@@ -76,14 +77,31 @@ class ContactDetailViewModel: QRCodeManagerDelegate {
         qrCodeManager?.fetchQRCode(for: data.base64EncodedString())
     }
     
+    // MARK: - QRCodeManager Delegate
     func fetchQRCodeSucceeded(with imageData: Data) {
         qrCode = UIImage(data: imageData)
+        saveImageToTempDirectory(image: qrCode)
         viewable?.changeStateOfShareButton(enabled: true)
         viewable?.reloadTableView()
     }
     
     func fetchQRCodeFailed(with error: QRError) {
         viewable?.showError(message: error.description)
+    }
+    
+    func saveImageToTempDirectory(image: UIImage?) {
+        // Create a URL in the /tmp directory
+        guard let imageURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("qrCode.png"),
+               let image = image else {
+            return
+        }
+        
+        do {
+            try image.pngData()?.write(to: imageURL)
+            qrCodeURL = imageURL
+        } catch {
+            qrCodeURL = nil
+        }
     }
     
 }

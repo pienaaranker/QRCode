@@ -72,9 +72,6 @@ class ContactDetailTableViewController: UITableViewController, ContactDetailView
             return
         }
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-                
-        // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
     }
     

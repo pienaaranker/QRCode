@@ -29,6 +29,10 @@ class QRScannerViewModel {
             return
         }
         
+        viewable?.dismissViewController(with: contact)
+    }
+    
+    func contactFound(with contact: CNContact) {
         delegate?.qrScanningSucceeded(with: contact)
     }
 }

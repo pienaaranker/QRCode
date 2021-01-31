@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Contacts
 
 class QRScannerViewController: UIViewController, QRScannerViewable, QRScannerViewDelegate  {
     
@@ -35,12 +36,21 @@ class QRScannerViewController: UIViewController, QRScannerViewable, QRScannerVie
         qrScannerView.delegate = self
     }
     
+    // MARK: - Viewable
+    
+    func dismissViewController(with contact: CNContact) {
+        self.dismiss(animated: true) {
+            self.viewModel.contactFound(with: contact)
+        }
+    }
+    
     // MARK: - QRScanner Delegate
     func qrScanningDidFail() {
         
     }
     
     func qrScanningSucceededWithCode(string: String?) {
+        qrScannerView.stopScanning()
         viewModel.importContact(vcfBase64String: string)
     }
     

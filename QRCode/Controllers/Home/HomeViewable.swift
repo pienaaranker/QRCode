@@ -12,4 +12,5 @@ protocol HomeViewable: class {
     func showContactsPicker()
     func navigateToContactDetails(with contact: CNContact)
     func openCamera()
+    func showContactDetails(contact: CNContact)
 }

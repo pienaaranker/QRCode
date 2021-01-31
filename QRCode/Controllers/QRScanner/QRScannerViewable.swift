@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Contacts
 
 protocol QRScannerViewable: class {
-    
+    func dismissViewController(with contact: CNContact)
 }
