@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0812021925C8556E003CF13C /* HomeViewableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0812021825C8556E003CF13C /* HomeViewableMock.swift */; };
 		081804F225C314D4004CCADA /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081804F125C314D4004CCADA /* ContactDetailViewModel.swift */; };
 		081804F625C314DD004CCADA /* ContactDetailViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081804F525C314DD004CCADA /* ContactDetailViewable.swift */; };
 		085AFCFD25C1D18D009A2A63 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AFCFC25C1D18D009A2A63 /* HomeViewController.swift */; };
 		085AFD0325C1D268009A2A63 /* HomeViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AFD0225C1D268009A2A63 /* HomeViewable.swift */; };
 		085AFD0725C1D26E009A2A63 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085AFD0625C1D26E009A2A63 /* HomeViewModel.swift */; };
+		0863362725C85F320090E9D3 /* NetworkManagableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0863362625C85F320090E9D3 /* NetworkManagableMock.swift */; };
+		0863362B25C85FA00090E9D3 /* NetworkMockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0863362A25C85FA00090E9D3 /* NetworkMockDataGenerator.swift */; };
 		08832D3525C1C7C000DA123A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08832D3425C1C7C000DA123A /* AppDelegate.swift */; };
 		08832D3725C1C7C000DA123A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08832D3625C1C7C000DA123A /* SceneDelegate.swift */; };
 		08832D3C25C1C7C000DA123A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08832D3A25C1C7C000DA123A /* Main.storyboard */; };
 		08832D3E25C1C7C200DA123A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08832D3D25C1C7C200DA123A /* Assets.xcassets */; };
 		08832D4125C1C7C200DA123A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08832D3F25C1C7C200DA123A /* LaunchScreen.storyboard */; };
+		08ADE2DE25C857CA0039F654 /* ContactDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ADE2DD25C857CA0039F654 /* ContactDetailViewModelTests.swift */; };
+		08ADE2E425C857EE0039F654 /* ContactDetailViewableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ADE2E325C857EE0039F654 /* ContactDetailViewableMock.swift */; };
+		08ADE2E825C858A50039F654 /* ContactGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ADE2E725C858A50039F654 /* ContactGenerator.swift */; };
 		08AEEA5125C58083000535BC /* NetworkManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AEEA4F25C58083000535BC /* NetworkManagable.swift */; };
 		08AEEA5225C58083000535BC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AEEA5025C58083000535BC /* NetworkManager.swift */; };
 		08AEEA5825C5836A000535BC /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AEEA5725C5836A000535BC /* QRCodeManager.swift */; };
@@ -25,6 +31,13 @@
 		08AEEA6F25C58580000535BC /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AEEA6E25C58580000535BC /* EncodableExtension.swift */; };
 		08C8843025C473DC006DE998 /* ContactDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8842F25C473DC006DE998 /* ContactDetailTableViewController.swift */; };
 		08C8843725C47D2C006DE998 /* ContactImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8843625C47D2C006DE998 /* ContactImageView.swift */; };
+		08D0CACF25C8622200A3AD58 /* QRCodeData in Resources */ = {isa = PBXBuildFile; fileRef = 08D0CACE25C8622200A3AD58 /* QRCodeData */; };
+		08D0CAD425C8627600A3AD58 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0CAD325C8627600A3AD58 /* FileHelper.swift */; };
+		08D0CADE25C866AA00A3AD58 /* QRScannerViewableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0CADD25C866AA00A3AD58 /* QRScannerViewableMock.swift */; };
+		08D0CAE425C8671700A3AD58 /* QRScannerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0CAE325C8671700A3AD58 /* QRScannerViewModelTests.swift */; };
+		08D0CAE825C8678A00A3AD58 /* QRScannerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0CAE725C8678A00A3AD58 /* QRScannerDelegateMock.swift */; };
+		08D0CAEC25C8690800A3AD58 /* VCard in Resources */ = {isa = PBXBuildFile; fileRef = 08D0CAEB25C8690800A3AD58 /* VCard */; };
+		08D0CAF025C8693300A3AD58 /* QRScannerMockDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D0CAEF25C8693300A3AD58 /* QRScannerMockDataGenerator.swift */; };
 		08E0AEAD25C58EA40032F68D /* QRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0AEAC25C58EA40032F68D /* QRError.swift */; };
 		08E0AEB125C5919B0032F68D /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0AEB025C5919B0032F68D /* UIViewControllerExtensions.swift */; };
 		08E0AEB525C591B50032F68D /* GlobalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0AEB425C591B50032F68D /* GlobalStrings.swift */; };
@@ -53,11 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0812021825C8556E003CF13C /* HomeViewableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewableMock.swift; sourceTree = "<group>"; };
 		081804F125C314D4004CCADA /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 		081804F525C314DD004CCADA /* ContactDetailViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewable.swift; sourceTree = "<group>"; };
 		085AFCFC25C1D18D009A2A63 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		085AFD0225C1D268009A2A63 /* HomeViewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewable.swift; sourceTree = "<group>"; };
 		085AFD0625C1D26E009A2A63 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0863362625C85F320090E9D3 /* NetworkManagableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagableMock.swift; sourceTree = "<group>"; };
+		0863362A25C85FA00090E9D3 /* NetworkMockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMockDataGenerator.swift; sourceTree = "<group>"; };
 		08832D3125C1C7C000DA123A /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08832D3425C1C7C000DA123A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08832D3625C1C7C000DA123A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +83,9 @@
 		08832D4225C1C7C200DA123A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08832D4725C1C7C200DA123A /* QRCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08832D4D25C1C7C200DA123A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08ADE2DD25C857CA0039F654 /* ContactDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModelTests.swift; sourceTree = "<group>"; };
+		08ADE2E325C857EE0039F654 /* ContactDetailViewableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewableMock.swift; sourceTree = "<group>"; };
+		08ADE2E725C858A50039F654 /* ContactGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactGenerator.swift; sourceTree = "<group>"; };
 		08AEEA4F25C58083000535BC /* NetworkManagable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagable.swift; sourceTree = "<group>"; };
 		08AEEA5025C58083000535BC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		08AEEA5725C5836A000535BC /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
@@ -75,6 +94,13 @@
 		08AEEA6E25C58580000535BC /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
 		08C8842F25C473DC006DE998 /* ContactDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailTableViewController.swift; sourceTree = "<group>"; };
 		08C8843625C47D2C006DE998 /* ContactImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactImageView.swift; sourceTree = "<group>"; };
+		08D0CACE25C8622200A3AD58 /* QRCodeData */ = {isa = PBXFileReference; lastKnownFileType = text; path = QRCodeData; sourceTree = "<group>"; };
+		08D0CAD325C8627600A3AD58 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
+		08D0CADD25C866AA00A3AD58 /* QRScannerViewableMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewableMock.swift; sourceTree = "<group>"; };
+		08D0CAE325C8671700A3AD58 /* QRScannerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewModelTests.swift; sourceTree = "<group>"; };
+		08D0CAE725C8678A00A3AD58 /* QRScannerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerDelegateMock.swift; sourceTree = "<group>"; };
+		08D0CAEB25C8690800A3AD58 /* VCard */ = {isa = PBXFileReference; lastKnownFileType = text; path = VCard; sourceTree = "<group>"; };
+		08D0CAEF25C8693300A3AD58 /* QRScannerMockDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerMockDataGenerator.swift; sourceTree = "<group>"; };
 		08E0AEAC25C58EA40032F68D /* QRError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRError.swift; sourceTree = "<group>"; };
 		08E0AEB025C5919B0032F68D /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		08E0AEB425C591B50032F68D /* GlobalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStrings.swift; sourceTree = "<group>"; };
@@ -110,6 +136,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0812021C25C85600003CF13C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0812021825C8556E003CF13C /* HomeViewableMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		081804F025C314C5004CCADA /* ContactDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +165,13 @@
 				085AFD0625C1D26E009A2A63 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0863361925C859650090E9D3 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		08832D2825C1C7C000DA123A = {
@@ -167,6 +208,9 @@
 		08832D4A25C1C7C200DA123A /* QRCodeTests */ = {
 			isa = PBXGroup;
 			children = (
+				08ADE2EB25C858EC0039F654 /* Common */,
+				08D0CADB25C8668F00A3AD58 /* QRScanner */,
+				08ADE2DB25C857A60039F654 /* ContactDetail */,
 				08E9983C25C853C400BEA4EA /* Home */,
 				08832D4D25C1C7C200DA123A /* Info.plist */,
 			);
@@ -210,6 +254,36 @@
 				08832D3D25C1C7C200DA123A /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		08ADE2DB25C857A60039F654 /* ContactDetail */ = {
+			isa = PBXGroup;
+			children = (
+				08ADE2DC25C857B00039F654 /* Mock */,
+				08ADE2DD25C857CA0039F654 /* ContactDetailViewModelTests.swift */,
+			);
+			path = ContactDetail;
+			sourceTree = "<group>";
+		};
+		08ADE2DC25C857B00039F654 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				08D0CACE25C8622200A3AD58 /* QRCodeData */,
+				08ADE2E325C857EE0039F654 /* ContactDetailViewableMock.swift */,
+				0863362625C85F320090E9D3 /* NetworkManagableMock.swift */,
+				0863362A25C85FA00090E9D3 /* NetworkMockDataGenerator.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		08ADE2EB25C858EC0039F654 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				08D0CAD225C8626900A3AD58 /* Helpers */,
+				0863361925C859650090E9D3 /* Mock */,
+				08ADE2E725C858A50039F654 /* ContactGenerator.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		08AEEA4625C57FCF000535BC /* Networking */ = {
@@ -259,6 +333,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		08D0CAD225C8626900A3AD58 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				08D0CAD325C8627600A3AD58 /* FileHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		08D0CADB25C8668F00A3AD58 /* QRScanner */ = {
+			isa = PBXGroup;
+			children = (
+				08D0CADC25C8669D00A3AD58 /* Mock */,
+				08D0CAE325C8671700A3AD58 /* QRScannerViewModelTests.swift */,
+			);
+			path = QRScanner;
+			sourceTree = "<group>";
+		};
+		08D0CADC25C8669D00A3AD58 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				08D0CAEB25C8690800A3AD58 /* VCard */,
+				08D0CADD25C866AA00A3AD58 /* QRScannerViewableMock.swift */,
+				08D0CAE725C8678A00A3AD58 /* QRScannerDelegateMock.swift */,
+				08D0CAEF25C8693300A3AD58 /* QRScannerMockDataGenerator.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		08E0AEBC25C6ABEA0032F68D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +402,7 @@
 		08E9983C25C853C400BEA4EA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0812021C25C85600003CF13C /* Mock */,
 				08E9983D25C8543400BEA4EA /* HomeViewModelTests.swift */,
 			);
 			path = Home;
@@ -395,6 +498,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08D0CACF25C8622200A3AD58 /* QRCodeData in Resources */,
+				08D0CAEC25C8690800A3AD58 /* VCard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +546,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08ADE2DE25C857CA0039F654 /* ContactDetailViewModelTests.swift in Sources */,
+				08ADE2E825C858A50039F654 /* ContactGenerator.swift in Sources */,
+				08D0CAF025C8693300A3AD58 /* QRScannerMockDataGenerator.swift in Sources */,
+				08D0CAE425C8671700A3AD58 /* QRScannerViewModelTests.swift in Sources */,
 				08E9983E25C8543400BEA4EA /* HomeViewModelTests.swift in Sources */,
+				08D0CADE25C866AA00A3AD58 /* QRScannerViewableMock.swift in Sources */,
+				0863362725C85F320090E9D3 /* NetworkManagableMock.swift in Sources */,
+				08ADE2E425C857EE0039F654 /* ContactDetailViewableMock.swift in Sources */,
+				08D0CAD425C8627600A3AD58 /* FileHelper.swift in Sources */,
+				0863362B25C85FA00090E9D3 /* NetworkMockDataGenerator.swift in Sources */,
+				08D0CAE825C8678A00A3AD58 /* QRScannerDelegateMock.swift in Sources */,
+				0812021925C8556E003CF13C /* HomeViewableMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

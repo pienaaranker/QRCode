@@ -29,7 +29,7 @@ class QRScannerViewModel {
               let contact = try? CNContactVCardSerialization.contacts(with: data).first  else {
             return
         }
-        
+        print(vcfString)
         viewable?.dismissViewController(with: contact)
     }
     

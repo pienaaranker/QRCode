@@ -1,0 +1,27 @@
+BEGIN:VCARD
+
+VERSION:3.0
+
+PRODID:-//Apple Inc.//iPhone OS 14.1//EN
+
+N:Haro;Anna 🎶;;;
+
+FN:Anna 🎶 Haro
+
+NICKNAME:Annie
+
+EMAIL;type=INTERNET;type=HOME;type=pref:anna-haro@mac.com
+
+TEL;type=HOME;type=VOICE;type=pref:555-522-8243
+
+item1.ADR;type=HOME;type=pref:;;1001  Leavenworth Street;Sausalito;CA;94965;USA
+
+item1.X-ABADR:us
+
+BDAY:1985-08-29
+
+item2.X-ABDATE;type=pref:2002-02-15
+
+item2.X-ABLabel:_$!<Anniversary>!$_
+
+END:VCARD
