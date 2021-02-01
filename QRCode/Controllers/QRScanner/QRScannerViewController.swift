@@ -44,9 +44,13 @@ class QRScannerViewController: UIViewController, QRScannerViewable, QRScannerVie
         }
     }
     
+    func showError(message: String) {
+        showAlert(title: GlobalStrings.Alert.errorTitle, message: message, handler: nil)
+    }
+    
     // MARK: - QRScanner Delegate
     func qrScanningDidFail() {
-        
+        viewModel.scanningFailed()
     }
     
     func qrScanningSucceededWithCode(string: String?) {
@@ -55,6 +59,5 @@ class QRScannerViewController: UIViewController, QRScannerViewable, QRScannerVie
     }
     
     func qrScanningDidStop() {
-        
     }
 }

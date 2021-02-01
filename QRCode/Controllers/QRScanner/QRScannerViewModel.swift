@@ -20,6 +20,7 @@ class QRScannerViewModel {
     
     struct Strings {
         static let infoLabel = "↓ Drag down to close ↓"
+        static let scanningFailedMessage = "Scanning for QR Code failed"
     }
     
     func importContact(vcfString: String?) {
@@ -34,5 +35,9 @@ class QRScannerViewModel {
     
     func contactFound(with contact: CNContact) {
         delegate?.qrScanningSucceeded(with: contact)
+    }
+    
+    func scanningFailed() {
+        viewable?.showError(message: QRScannerViewModel.Strings.scanningFailedMessage)
     }
 }

@@ -19,7 +19,6 @@ class HomeViewController: UIViewController, HomeViewable {
         
         configureView()
         configureLabels()
-        configureButtons()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,10 +34,6 @@ class HomeViewController: UIViewController, HomeViewable {
         titleLabel.text = HomeViewModel.Strings.title
         titleLabel.font = Theme.Labels.LargeFont
         titleLabel.textColor = Theme.Labels.textColorLight
-    }
-    
-    func configureButtons() {
-        
     }
     
     // MARK: - Viewable
@@ -99,20 +94,16 @@ class HomeViewController: UIViewController, HomeViewable {
 }
 
 extension HomeViewController: CNContactPickerDelegate {
+    
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         viewModel.selectedContactToShare(contact: contact)
     }
 }
 
 extension HomeViewController: QRScannerDelegate {
-    func qrScanningDidFail() {
-    }
     
     func qrScanningSucceeded(with contact: CNContact) {
         viewModel.showContactDetails(contact: contact)
-    }
-    
-    func qrScanningDidStop() {
     }
 }
 

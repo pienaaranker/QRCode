@@ -28,7 +28,7 @@ class NetworkManager: NetworkManagable {
         case 200...299:
             completion(data, nil)
         case 400...499:
-            completion(nil, QRError.contactTooLarge)
+            completion(nil, QRError.callFailed)
         case 500:
             completion(nil, QRError.callFailed)
         default:
@@ -63,6 +63,7 @@ class NetworkManager: NetworkManagable {
     }
     
     func log(_ items: Any) {
+        // Here all logs can be filtered out if the build configuration was set to Release
         print(items)
     }
     

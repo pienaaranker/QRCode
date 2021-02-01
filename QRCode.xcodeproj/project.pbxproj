@@ -17,7 +17,6 @@
 		08832D3C25C1C7C000DA123A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08832D3A25C1C7C000DA123A /* Main.storyboard */; };
 		08832D3E25C1C7C200DA123A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08832D3D25C1C7C200DA123A /* Assets.xcassets */; };
 		08832D4125C1C7C200DA123A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08832D3F25C1C7C200DA123A /* LaunchScreen.storyboard */; };
-		08832D4C25C1C7C200DA123A /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08832D4B25C1C7C200DA123A /* QRCodeTests.swift */; };
 		08AEEA5125C58083000535BC /* NetworkManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AEEA4F25C58083000535BC /* NetworkManagable.swift */; };
 		08AEEA5225C58083000535BC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AEEA5025C58083000535BC /* NetworkManager.swift */; };
 		08AEEA5825C5836A000535BC /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AEEA5725C5836A000535BC /* QRCodeManager.swift */; };
@@ -40,6 +39,7 @@
 		08E0AEFE25C6CF750032F68D /* QRButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E0AEFD25C6CF750032F68D /* QRButton.swift */; };
 		08E7D0E225C5641600A22310 /* ContactInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E7D0E025C5641600A22310 /* ContactInfoTableViewCell.swift */; };
 		08E7D0E925C564EF00A22310 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E7D0E825C564EF00A22310 /* Theme.swift */; };
+		08E9983E25C8543400BEA4EA /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E9983D25C8543400BEA4EA /* HomeViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +66,6 @@
 		08832D4025C1C7C200DA123A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08832D4225C1C7C200DA123A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08832D4725C1C7C200DA123A /* QRCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		08832D4B25C1C7C200DA123A /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		08832D4D25C1C7C200DA123A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08AEEA4F25C58083000535BC /* NetworkManagable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagable.swift; sourceTree = "<group>"; };
 		08AEEA5025C58083000535BC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		08E0AEFD25C6CF750032F68D /* QRButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRButton.swift; sourceTree = "<group>"; };
 		08E7D0E025C5641600A22310 /* ContactInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoTableViewCell.swift; sourceTree = "<group>"; };
 		08E7D0E825C564EF00A22310 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		08E9983D25C8543400BEA4EA /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,7 @@
 		08832D4A25C1C7C200DA123A /* QRCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				08832D4B25C1C7C200DA123A /* QRCodeTests.swift */,
+				08E9983C25C853C400BEA4EA /* Home */,
 				08832D4D25C1C7C200DA123A /* Info.plist */,
 			);
 			path = QRCodeTests;
@@ -295,6 +295,14 @@
 				08E0AEB825C593630032F68D /* QRCodeTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		08E9983C25C853C400BEA4EA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				08E9983D25C8543400BEA4EA /* HomeViewModelTests.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08832D4C25C1C7C200DA123A /* QRCodeTests.swift in Sources */,
+				08E9983E25C8543400BEA4EA /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

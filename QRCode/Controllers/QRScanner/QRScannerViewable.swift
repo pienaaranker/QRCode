@@ -10,4 +10,5 @@ import Contacts
 
 protocol QRScannerViewable: class {
     func dismissViewController(with contact: CNContact)
+    func showError(message: String)
 }

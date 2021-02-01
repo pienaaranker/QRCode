@@ -9,7 +9,5 @@ import Foundation
 import Contacts
 
 protocol QRScannerDelegate: class {
-    func qrScanningDidFail()
     func qrScanningSucceeded(with contact: CNContact)
-    func qrScanningDidStop()
 }
